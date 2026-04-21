@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-serif: "Libre Baskerville", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0f172a] text-[#f8fafc] overflow-hidden;
+  }
+}
+
+.mesh-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 1) 0%, rgba(15, 23, 42, 1) 100%);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.pill {
+  @apply bg-white/10 border border-white/10 px-4 py-1.5 rounded-full text-[12px] text-[#38bdf8] uppercase tracking-[0.1em] font-bold w-fit;
+}
+
+.title-theme {
+  @apply text-[64px] font-[800] text-[#f8fafc] tracking-[-2px] leading-[1.1];
+}
+
+.message-theme {
+  @apply text-[18px] text-[#94a3b8] leading-[1.6] max-w-[500px];
+}
+
+.small-card {
+  @apply bg-white/[0.03] border border-white/[0.05] rounded-2xl p-5 transition-transform duration-200 cursor-pointer hover:bg-white/[0.08];
+}
+
+.btn-cta {
+  @apply bg-[#38bdf8] text-[#0f172a] px-6 py-3 rounded-xl font-semibold border-none cursor-pointer hover:bg-[#38bdf8]/90 transition-colors;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#38bdf8]/20 rounded-full hover:bg-[#38bdf8]/40;
+}
+
+.letter-scroll::-webkit-scrollbar-thumb {
+  @apply bg-[#0f172a]/10 hover:bg-[#0f172a]/20;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
